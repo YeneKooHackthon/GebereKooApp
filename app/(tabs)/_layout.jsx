@@ -4,9 +4,9 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import icons from "../../constants/icons";
 
 export default function App() {
-  const TabIcon = ({ color, focused, title, name, icon }) => {
+  const TabIcon = ({ color, focused, name, icon, iconStyle, contStyle }) => {
     return (
-      <View className="flex-col items-center gap-[3px]">
+      <View className={`flex-col items-center gap-[3px] ${contStyle}`}>
         {/* <Ionicons name="scan" size={24} color="black" /> */}
         <Image
           // name={icon}
@@ -14,17 +14,17 @@ export default function App() {
           resizeMode="contain"
           tintColor={color}
           color={color}
-          className="w-6 h-6"
+          className={iconStyle}
           // size={size}
           // style={iconStyle}
         />
-        <Text
+        {/* <Text
           className={`${
             focused ? "text-sm text-[#135D66]" : "text-xs text-[#77B0AA]"
           } `}
         >
           {name}
-        </Text>
+        </Text> */}
       </View>
     );
   };
@@ -34,7 +34,7 @@ export default function App() {
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
-        tabBarActiveTintColor: "#135D66",
+        tabBarActiveTintColor: "#33a800",
         tabBarInactiveTintColor: "#77B0AA",
 
         tabBarStyle: {
@@ -53,6 +53,7 @@ export default function App() {
               focused={focused}
               icon={icons.home}
               name="Home"
+              iconStyle="w-7 h-7"
               // size={28}
             />
           ),
@@ -67,6 +68,8 @@ export default function App() {
               focused={focused}
               icon={icons.scan}
               name="Scan"
+              iconStyle="w-8 h-8"
+              contStyle="mb-8 border-4 border-primary bg-white w-20 h-20 justify-center rounded-full"
               // size={38}
               // iconStyle={{ padding: "5px", backgroundColor: "red" }}
             />
@@ -85,6 +88,7 @@ export default function App() {
               focused={focused}
               icon={icons.apps}
               name="Apps"
+              iconStyle="w-7 h-7"
               // size={28}
             />
           ),

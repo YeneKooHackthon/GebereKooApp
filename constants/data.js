@@ -1,3 +1,4 @@
+import images from "./images";
 const communityFourmData = [
   {
     id: "1",
@@ -70,7 +71,29 @@ const chemicals = [
   },
 ];
 
+const seeds = [
+  {
+    id: "1",
+    name: "bekolo",
+    img: images.cornImg,
+    price: "25birr",
+  },
+  {
+    id: "2",
+    name: "tef",
+    img: images.tefImg,
+    price: "25birr",
+  },
+  {
+    id: "3",
+    name: "snde",
+    img: images.weatImg,
+    price: "25birr",
+  },
+];
+
 export default {
   communityFourmData,
   chemicals,
+  seeds,
 };

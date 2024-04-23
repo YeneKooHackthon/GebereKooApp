@@ -1,20 +1,38 @@
-import { View, Text, TextInput, FlatList, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  FlatList,
+  Image,
+  RefreshControl,
+} from "react-native";
 import React from "react";
 import data from "../constants/data";
 import icons from "../constants/icons";
 
+import { useState } from "react";
+
 const Weather = () => {
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+  };
   return (
     <View className="bg-white h-full p-4 flex-col space-y-4">
       <Text className="font-pregular text-lg text-[#135D66]">Weather</Text>
 
       <FlatList
         data={data.communityFourmData}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <View className="bg-black-100 w-[100%] min-h-[86px] rounded-2xl p-4 mt-4 space-x-6">
+          <View className="bg-yellow-200 w-[100%] min-h-[86px] rounded-2xl p-4 mt-4 space-x-6">
             <View className="flex-col space-y-4 items-start">
               <View className="min-w-full flex-row justify-between items-center">
-                <Text className="font-pregular text-lg text-white">
+                <Text className="font-pregular text-lg text-[#135D66]">
                   {item.title}
                 </Text>
                 <Text className="font-pregular text-lg text-red-400">16</Text>
@@ -33,6 +51,9 @@ const Weather = () => {
           </View>
         )}
         extraData={(item) => item.id}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
       />
     </View>
   );
