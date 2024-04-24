@@ -7,41 +7,53 @@ import { Link } from "expo-router";
 
 const Apps = () => {
   return (
-    <SafeAreaView className="bg-white h-full px-4">
+    <SafeAreaView className="bg-gray h-full px-4">
       <View className="mt-8 min-h-[70%] flex items-center justify-center space-y-16">
         <Text className="font-pregular text-lg text-primary text-center">
-          our mini-apss
+          ሚኒ-መተግበሪያዎች
         </Text>
 
         <FlatList
           data={[
-            { id: "1", name: "Shop", link: "/shop", icon: icons.shop },
-            { id: "2", name: "Forum", link: "/forum", icon: icons.forum },
+            { id: "1", name: "ሱቅ", link: "/shop", icon: icons.shop },
+            {
+              id: "2",
+              name: "የማህበረሰብ መድረኮች",
+              link: "/forum",
+              icon: icons.forum,
+            },
           ]}
           horizontal
           contentContainerStyle={styles.listWrapper}
           className="mt-16 grow-0"
           renderItem={({ item }) => (
-            <Link href={item.link} className="">
-              <View className="flex-col items-center justify-center space-y-2">
-                <View>
-                  <Image
-                    source={item.icon}
-                    className="w-12 h-12"
-                    resizeMode="contain"
-                  />
+            <View className="min-w-[160px] min-h-[130px] bg-white p-4 felx-row justify-center items-center rounded-2xl">
+              <Link href={item.link}>
+                <View className="flex-col items-center justify-center space-y-2">
+                  <View>
+                    <Image
+                      source={item.icon}
+                      className="w-12 h-12"
+                      resizeMode="contain"
+                    />
+                  </View>
+                  <Text className="text-primary text-center">{item.name}</Text>
                 </View>
-                <Text className="text-primary">{item.name}</Text>
-              </View>
-            </Link>
+              </Link>
+            </View>
           )}
         />
         <FlatList
           data={[
-            { id: "3", name: "Weather", link: "/weather", icon: icons.weather },
+            {
+              id: "3",
+              name: "የአየር ሁኔታ",
+              link: "/weather",
+              icon: icons.weather,
+            },
             {
               id: "4",
-              name: "Education",
+              name: "ትምህርት",
               link: "/education",
               icon: icons.videos,
             },
@@ -50,18 +62,20 @@ const Apps = () => {
           contentContainerStyle={styles.listWrapper}
           className="mt-16 grow-0"
           renderItem={({ item }) => (
-            <Link href={item.link} className="">
-              <View className="flex-col items-center justify-center space-y-2">
-                <View>
-                  <Image
-                    source={item.icon}
-                    className="w-12 h-12"
-                    resizeMode="contain"
-                  />
+            <View className="min-w-[160px] min-h-[120px] bg-white p-4 felx-row justify-center items-center rounded-2xl">
+              <Link href={item.link}>
+                <View className="flex-col items-center justify-center space-y-2">
+                  <View>
+                    <Image
+                      source={item.icon}
+                      className="w-12 h-12"
+                      resizeMode="contain"
+                    />
+                  </View>
+                  <Text className="text-primary text-center">{item.name}</Text>
                 </View>
-                <Text className="text-primary">{item.name}</Text>
-              </View>
-            </Link>
+              </Link>
+            </View>
           )}
         />
       </View>

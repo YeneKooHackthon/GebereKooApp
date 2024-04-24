@@ -69,7 +69,7 @@ export default function App() {
               icon={icons.scan}
               name="Scan"
               iconStyle="w-8 h-8"
-              contStyle="mb-8 border-4 border-primary bg-white w-20 h-20 justify-center rounded-full"
+              contStyle="mb-8 border-4 border-gray-100 bg-white w-20 h-20 justify-center rounded-full"
               // size={38}
               // iconStyle={{ padding: "5px", backgroundColor: "red" }}
             />

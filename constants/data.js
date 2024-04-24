@@ -2,39 +2,43 @@ import images from "./images";
 const communityFourmData = [
   {
     id: "1",
-    title: "title1",
+    title: "ተባዮችዎን ይረዱ",
+    author: "ዳግም ለገሰ",
+    img: images.pests,
     content:
-      "one In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
-  },
-  {
-    id: "2",
-    title: "title2",
-    content:
-      "two In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
-  },
-  {
-    id: "3",
-    title: "title3",
-    content:
-      "three In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
+      "ማንኛውንም ፀረ-ተባይ ከመጠቀምዎ በፊት በሰብልዎ ላይ ጉዳት የሚያደርሱ ተባዮችን ይለዩ። ሁሉም ተባዮች ጎጂ አይደሉም, እና አንዳንዶቹም ጠቃሚ ሊሆኑ ይችላሉ.",
   },
   {
     id: "4",
-    title: "title4",
-    content:
-      "four In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
+    title: "እራስህን ጠብቅ",
+    author: "ሰላም ፍቃደ",
+    img: images.keepSafe,
+    content: "ፀረ ተባይ መድሃኒቶችን ስትይዝ እና ስትተገብር ሁል ጊዜ ተገቢውን መከላከያ ልብስ እና መሳሪያ ይልበስ",
   },
+  {
+    id: "2",
+    title: "መመሪያዎችን ይከተሉ",
+    author: "ገመዳ መለሰ",
+    img: images.instruction,
+    content:
+      "ሁልጊዜ ያንብቡ እና በፀረ-ተባይ ምልክት ላይ ያሉትን መመሪያዎች ይከተሉ። ከመጠን በላይ መጠቀም ወይም የተሳሳተ አጠቃቀም ውጤታማ ያልሆነ የተባይ መቆጣጠሪያ እና በአካባቢው ላይ ሊደርስ የሚችል ጉዳት ሊያስከትል ይችላል",
+  },
+  {
+    id: "3",
+    title: "ጊዜ ቁልፍ ነው",
+    author: "ዳግም ለገሰ",
+    img: images.seasons,
+    content:
+      "ለበለጠ ውጤታማነት ፀረ ተባይ መድኃኒቶችን በትክክለኛው ጊዜ ይተግብሩ፣ ለምሳሌ በተባዮች የሕይወት ዑደት ውስጥ በተወሰነ ደረጃ ወይም በተወሰነ ቀን",
+  },
+
   {
     id: "5",
-    title: "title5",
+    title: "አማራጮችን አስቡ",
+    author: "ገመዳ መለሰ",
+    img: images.pesticideMan,
     content:
-      "five In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
-  },
-  {
-    id: "6",
-    title: "title6",
-    content:
-      "six In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
+      "ተባዮችን ለመቆጣጠር ባዮሎጂካል፣ባህላዊ እና ኬሚካላዊ ዘዴዎችን በማጣመር የተቀናጁ የተባይ መቆጣጠሪያ ስልቶችን ተመልከት",
   },
 ];
 
@@ -74,21 +78,54 @@ const chemicals = [
 const seeds = [
   {
     id: "1",
-    name: "bekolo",
+    name: "በቆሎ",
     img: images.cornImg,
-    price: "25birr",
+    price: "150",
   },
   {
     id: "2",
-    name: "tef",
-    img: images.tefImg,
-    price: "25birr",
+    name: "ስንዴ",
+    img: images.coffeeImg,
+    price: "220",
   },
   {
     id: "3",
-    name: "snde",
-    img: images.weatImg,
-    price: "25birr",
+    name: "ቴፍ",
+    img: images.tefImg,
+    price: "265",
+  },
+  {
+    id: "4",
+    name: "ስንዴ",
+    img: images.wheatImg,
+    price: "220",
+  },
+];
+
+const pesticides = [
+  {
+    id: "1",
+    name: "pestcide1",
+    img: images.pestcide1,
+    price: "150",
+  },
+  {
+    id: "2",
+    name: "pestcide2",
+    img: images.pestcide2,
+    price: "220",
+  },
+  {
+    id: "3",
+    name: "pestcide3",
+    img: images.pestcide3,
+    price: "265",
+  },
+  {
+    id: "4",
+    name: "pestcide5",
+    img: images.pestcide4,
+    price: "220",
   },
 ];
 
@@ -96,4 +133,5 @@ export default {
   communityFourmData,
   chemicals,
   seeds,
+  pesticides,
 };

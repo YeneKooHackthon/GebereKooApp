@@ -16,10 +16,15 @@ import icons from "../../constants/icons";
 
 import data from "../../constants/data";
 import images from "../../constants/images";
+import Header from "../../components/Header";
+import ItemCard from "../../components/ItemCard";
+import HomeHeader from "../../components/HomeHeader";
+import HomeWeatherCard from "../../components/HomeWeatherCard";
+import ForumCard from "../../components/ForumCard";
 
 const Home = () => {
   const [refreshing, setRefreshing] = useState(false);
-
+  HomeWeatherCard;
   const onRefresh = () => {
     setRefreshing(true);
     setTimeout(() => {
@@ -27,7 +32,7 @@ const Home = () => {
     }, 1000);
   };
   return (
-    <SafeAreaView className="bg-white h-full px-4">
+    <SafeAreaView className="bg-gray h-full px-4">
       <FlatList
         data={data.communityFourmData}
         showsVerticalScrollIndicator={false}
@@ -36,130 +41,41 @@ const Home = () => {
         // horizontal
 
         renderItem={({ item }) => (
-          <View className="bg-primary w-[100%] min-h-[86px] flex rounded-2xl p-4 mt-4">
-            <Text className="font-pregular text-lg text-white">
-              {item.title}
-            </Text>
-            <Text className="font-pregular text-sm text-slate-300">
-              {item.content}
-            </Text>
-          </View>
+          <ForumCard item={item} link="/forum" img={item.img} />
         )}
         extraData={(item) => item.id}
         ListHeaderComponent={() => (
           <View className="flex-col space-y-6">
-            <View className="flex-row  justify-between items-start">
-              <View className="gap-2">
-                <Text className="text-lg text-[#659a9e] font-pregular ">
-                  Hi Daniel
-                </Text>
-                <Text className="text-2xl text-neutral-900 font-pregular">
-                  Wellcome back
-                </Text>
-              </View>
-
-              <Link href="/profile">
-                <View className="bg-primary flex-col w-10 h-10 justify-center rounded-full items-center">
-                  <Image
-                    source={icons.user}
-                    className="w-5 h-5"
-                    resizeMode="contain"
-
-                    // tintColor={color}
-                  />
-                </View>
-              </Link>
-            </View>
-
-            <TextInput
-              className="h-12 w-[100%] border border-primary text-neutral-900 font-pregular rounded-3xl pl-8"
-              // style={styles.input}
-              // onChangeText={onChangeNumber}
-              // value={text}
-              placeholder="search for chemical"
-              // keyboardType=""
-            />
+            <HomeHeader name="Daniel" />
             <View className="flex-col space-y-3">
-              <View className="flex-row justify-between items-center px-1">
-                <Text className="font-pregular text-base  text-black">
-                  Weather predictions
-                </Text>
-                <Link
-                  href="/weather"
-                  className="font-pregular text-sm  text-[#77B0AA] p-1"
-                >
-                  <Text>show more</Text>
-                </Link>
-              </View>
+              <Header title="የአየር ሁኔታ ትንበያ" link="/weather" />
               <View className="bg-primary w-full min-h-[50px] mr-2 flex rounded-2xl p-3 space-y-4">
-                <View className="flex justify-between items-center space-y-2 w-full">
-                  <Text className="font-pregular text-sm text-white">
-                    Upcoming rainy day
-                  </Text>
-                  <Text className="font-pregular text-xs text-yellow-200">
-                    tue / april / 2016
-                  </Text>
-                </View>
+                <HomeWeatherCard />
               </View>
             </View>
-            <View className="flex-col space-y-3">
-              <View className="flex-row justify-between items-center px-1">
-                <Text className="font-pregular text-base  text-black">
-                  Seeds
-                </Text>
-                <Link
-                  href="/shop"
-                  className="font-pregular text-sm  text-[#77B0AA] p-1"
-                >
-                  <Text>show more</Text>
-                </Link>
-              </View>
+            <View className="flex-col space-y-1">
+              <Header title="ምርጥዘሮች" link="/shop" />
               <FlatList
                 data={data.seeds}
                 showsHorizontalScrollIndicator={false}
-                style={{ flexGrow: 0, paddingBottom: 5 }}
+                style={{ flexGrow: 0, paddingBottom: 20 }}
                 horizontal
-                renderItem={({ item }) => (
-                  <View className="w-[170px] min-h-[66px] mr-2 flex rounded-2xl space-y-4 border border-primary overflow-hidden">
-                    <View className=" flex-row w-full justify-between items-center p-3">
-                      <Text className="font-pregular text-sm text-black">
-                        name
-                      </Text>
-                      <Text className="font-pregular text-xs text-primary">
-                        {item.name}
-                      </Text>
-                    </View>
-                    <View className="flex items-center">
-                      <Image
-                        source={item.img}
-                        resizeMode="contain"
-                        className="w-[155px] h-[155px]"
-                      />
-                    </View>
-                    <View className="bg-primary flex-row w-full justify-between items-center p-3">
-                      <Text className="font-pregular text-sm text-white">
-                        Price
-                      </Text>
-                      <Text className="font-pregular text-xs text-yellow-200">
-                        {item.price}
-                      </Text>
-                    </View>
-                  </View>
-                )}
+                renderItem={({ item }) => <ItemCard item={item} />}
                 extraData={(item) => item.id}
               />
             </View>
-            <View className="flex-row justify-between items-center px-1">
-              <Text className="font-pregular text-base  text-black">
-                community fourm
-              </Text>
-              <Link
-                href="/forum"
-                className="font-pregular text-sm  text-[#77B0AA] p-1"
-              >
-                <Text>show more</Text>
-              </Link>
+            <View className="flex-col space-y-1">
+              <Header title="ፀረ-ተባይ" link="/shop" />
+              <FlatList
+                data={data.pesticides}
+                showsHorizontalScrollIndicator={false}
+                style={{ flexGrow: 0, paddingBottom: 20 }}
+                horizontal
+                renderItem={({ item }) => <ItemCard item={item} />}
+                extraData={(item) => item.id}
+              />
             </View>
+            <Header title=" የማህበረሰብ መድረኮች" link="/forum" />
           </View>
         )}
         refreshControl={
