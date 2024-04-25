@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "expo-router";
 import images from "../constants/images";
 
-const ForumCard = ({ link, item, img }) => {
+const ForumCard = ({ item, img }) => {
   return (
     <View className="bg-white w-[100%] min-h-[86px] flex rounded-2xl px-4 py-6 mt-1 mb-4 space-y-4">
       <View className="flex-row w-full justify-between items-center">
@@ -15,11 +15,10 @@ const ForumCard = ({ link, item, img }) => {
       <View className="h-[180px] overflow-hidden rounded-2xl">
         <Image source={img} resizeMode="cover" className="w-full h-full" />
       </View>
-      <Link href={link}>
-        <Text className="font-pregular text-sm text-slate-700">
-          {item.content}
-        </Text>
-      </Link>
+
+      <Text className="font-pregular text-sm text-slate-700">
+        {item.content}
+      </Text>
     </View>
   );
 };

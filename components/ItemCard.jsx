@@ -2,10 +2,12 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
 
-const ItemCard = ({ item }) => {
+const ItemCard = ({ item, style }) => {
   return (
     <Link href="/shop" className="mr-4">
-      <View className="w-[170px] min-h-[66px] flex rounded-2xl bg-white overflow-hidden">
+      <View
+        className={`w-[170px] min-h-[66px] flex ${style} bg-white overflow-hidden`}
+      >
         <View className="flex items-center bg-gray-50">
           <Image
             source={item.img}
@@ -13,7 +15,7 @@ const ItemCard = ({ item }) => {
             className="w-[220px] h-[160px]"
           />
         </View>
-        <View className="px-3 py-2">
+        <View className="px-3 py-4">
           <Text className="font-pregular text-lg text-primary">
             {item.name}
           </Text>

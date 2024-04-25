@@ -11,13 +11,13 @@ const HomeHeader = ({ name }) => {
         <Text className="text-lg text-[#659a9e] font-pregular ">
           ሰላም {name}
         </Text>
-        <Text className="text-2xl text-neutral-900 font-pregular">
+        <Text className="text-xl text-neutral-900 font-pregular">
           እንኳን ደህና መጣህ/ሽ
         </Text>
       </View>
 
       <Link href="/profile">
-        <View className="bg-primary flex-col w-10 h-10 justify-center rounded-full items-center">
+        <View className="bg-[#44807a] flex-col w-10 h-10 justify-center rounded-full items-center">
           <Image
             source={icons.user}
             className="w-5 h-5"

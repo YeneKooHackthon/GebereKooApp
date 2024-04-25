@@ -7,24 +7,13 @@ export default function App() {
   const TabIcon = ({ color, focused, name, icon, iconStyle, contStyle }) => {
     return (
       <View className={`flex-col items-center gap-[3px] ${contStyle}`}>
-        {/* <Ionicons name="scan" size={24} color="black" /> */}
         <Image
-          // name={icon}
           source={icon}
           resizeMode="contain"
           tintColor={color}
           color={color}
           className={iconStyle}
-          // size={size}
-          // style={iconStyle}
         />
-        {/* <Text
-          className={`${
-            focused ? "text-sm text-[#135D66]" : "text-xs text-[#77B0AA]"
-          } `}
-        >
-          {name}
-        </Text> */}
       </View>
     );
   };

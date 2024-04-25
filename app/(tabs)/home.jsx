@@ -1,21 +1,14 @@
-import {
-  View,
-  Text,
-  TextInput,
-  Image,
-  FlatList,
-  RefreshControl,
-} from "react-native";
+import { View, FlatList, RefreshControl } from "react-native";
 
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
-import { Link } from "expo-router";
+// import { Link } from "expo-router";
 
-import icons from "../../constants/icons";
+// import icons from "../../constants/icons";
 
 import data from "../../constants/data";
-import images from "../../constants/images";
+// import images from "../../constants/images";
 import Header from "../../components/Header";
 import ItemCard from "../../components/ItemCard";
 import HomeHeader from "../../components/HomeHeader";
@@ -37,7 +30,7 @@ const Home = () => {
         data={data.communityFourmData}
         showsVerticalScrollIndicator={false}
         style={{ flexGrow: 0 }}
-        className="mt-8"
+        className="mt-6"
         // horizontal
 
         renderItem={({ item }) => (
@@ -49,7 +42,7 @@ const Home = () => {
             <HomeHeader name="Daniel" />
             <View className="flex-col space-y-3">
               <Header title="የአየር ሁኔታ ትንበያ" link="/weather" />
-              <View className="bg-primary w-full min-h-[50px] mr-2 flex rounded-2xl p-3 space-y-4">
+              <View className="bg-[#44807a] w-full min-h-[50px] mr-2 flex rounded-2xl p-3 space-y-4">
                 <HomeWeatherCard />
               </View>
             </View>
@@ -60,7 +53,9 @@ const Home = () => {
                 showsHorizontalScrollIndicator={false}
                 style={{ flexGrow: 0, paddingBottom: 20 }}
                 horizontal
-                renderItem={({ item }) => <ItemCard item={item} />}
+                renderItem={({ item }) => (
+                  <ItemCard item={item} style="rounded-2xl" />
+                )}
                 extraData={(item) => item.id}
               />
             </View>
@@ -71,7 +66,9 @@ const Home = () => {
                 showsHorizontalScrollIndicator={false}
                 style={{ flexGrow: 0, paddingBottom: 20 }}
                 horizontal
-                renderItem={({ item }) => <ItemCard item={item} />}
+                renderItem={({ item }) => (
+                  <ItemCard item={item} style="rounded-2xl" />
+                )}
                 extraData={(item) => item.id}
               />
             </View>

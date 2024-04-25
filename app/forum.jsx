@@ -30,9 +30,7 @@ const Forum = () => {
       <FlatList
         data={data.communityFourmData}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => (
-          <ForumCard item={item} link="/[forum]" img={item.img} />
-        )}
+        renderItem={({ item }) => <ForumCard item={item} img={item.img} />}
         extraData={(item) => item.id}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />

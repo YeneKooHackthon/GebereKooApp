@@ -22,17 +22,21 @@ const Education = () => {
     }, 1000);
   };
   return (
-    <View className="bg-white h-full p-4 flex-col space-y-4">
+    <View className="bg-gary h-full p-4 flex-col space-y-2">
       <Text className="font-pregular text-lg text-primary">Education</Text>
 
       <FlatList
         data={data.communityFourmData}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <View className="bg-primary w-[100%] min-h-[86px] rounded-2xl p-4 mt-4 space-x-6">
+          <View className="bg-white w-[100%] min-h-[86px] rounded-2xl p-4 mt-4 space-x-6">
             <View className="flex-col space-y-4 items-start">
-              <Text className="font-pregular text-lg text-white">
+              <Text className="font-pregular text-lg text-[#44807a]">
                 {item.title}
+              </Text>
+              <Text className="font-pregular text-sm text-slate-700">
+                ማንኛውንም ፀረ-ተባይ ከመጠቀምዎ በፊት በሰብልዎ ላይ ጉዳት የሚያደርሱ ተባዮችን ይለዩ። ሁሉም ተባዮች
+                ጎጂ አይደሉም, እና አንዳንዶቹም ጠቃሚ ሊሆኑ ይችላሉ
               </Text>
               <View className="min-h-[150px] bg-slate-100 w-full rounded-2xl flex justify-center items-center">
                 <Image

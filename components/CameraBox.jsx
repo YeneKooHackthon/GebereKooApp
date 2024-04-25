@@ -2,7 +2,7 @@ import { CameraView, useCameraPermissions } from "expo-camera/next";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function CameraBox({ tourch }) {
+export default function CameraBox({ cref, tourchBool }) {
   const [facing, setFacing] = useState("back");
   const [permission, requestPermission] = useCameraPermissions();
 
@@ -25,12 +25,13 @@ export default function CameraBox({ tourch }) {
 
   return (
     <View style={styles.container}>
-      <CameraView style={styles.camera} facing={facing}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.text}>Flip Camera</Text>
-          </TouchableOpacity>
-        </View>
+      <CameraView
+        ref={cref}
+        style={styles.camera}
+        flash="on"
+        enableTorch={tourchBool}
+      >
+        <View style={styles.buttonContainer}></View>
       </CameraView>
     </View>
   );

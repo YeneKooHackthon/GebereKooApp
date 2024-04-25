@@ -5,15 +5,19 @@ import {
   FlatList,
   Image,
   RefreshControl,
+  Pressable,
 } from "react-native";
 import React from "react";
 import data from "../constants/data";
 import icons from "../constants/icons";
 
 import { useState } from "react";
+import ShopCard from "../components/shopCard";
 
 const Shop = () => {
   const [refreshing, setRefreshing] = useState(false);
+
+  const [active, setActive] = useState("all");
 
   const onRefresh = () => {
     setRefreshing(true);
@@ -22,58 +26,74 @@ const Shop = () => {
     }, 1000);
   };
   return (
-    <View className="bg-white h-full p-4 flex-col space-y-4">
-      <Text className="font-pregular text-lg text-primary">Chemicals shop</Text>
-      <TextInput
-        className="h-10 w-[100%] border border-primary text-neutral-900 font-pregular rounded-3xl pl-8"
-        // style={styles.input}
-        // onChangeText={onChangeNumber}
-        // value={text}
-        placeholder="search for chemical"
-        // keyboardType=""
-      />
+    <View className="bg-gray h-full p-4 flex-col space-y-2">
+      <Text className="font-pregular text-2xl text-primary text-center">
+        ሱቅ
+      </Text>
+
       <FlatList
-        data={data.chemicals}
+        data={data.pesticides}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => (
-          <View className="bg-primary w-[100%] min-h-[86px] flex rounded-2xl p-4 mt-4 flex-row space-x-6">
-            <View className="flex-col space-y-4 items-start">
-              <Text className="font-pregular text-lg text-white ml-5">
-                {item.name}
-              </Text>
-
-              <Image
-                source={icons.pesticides}
-                className="w-20 h-20"
-                // resizeMode="contain"
-              />
-
-              <Text className="font-pregular text-sm text-slate-300 ml-5">
-                {item.price}
-              </Text>
-            </View>
-            <View className="max-w-[70%] flex-col justify-between">
-              <FlatList
-                data={[
-                  { id: "1", name: "carbon florayd" },
-                  { id: "2", name: "oxide florayd" },
-                  { id: "3", name: "nitrogen florayd" },
-                ]}
-                renderItem={({ item }) => (
-                  <Text className="text-white mb-4">
-                    {item.id}. {item.name}
-                  </Text>
-                )}
-                extraData={(item) => item.id}
-              />
-              <Text className="text-blue-600 underline mt-2">0961626364</Text>
-            </View>
-          </View>
-        )}
+        renderItem={({ item }) => active !== "seed" && <ShopCard item={item} />}
         extraData={(item) => item.id}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
+        ListHeaderComponent={() => (
+          <View className="flex space-y-8 mt-2">
+            <TextInput
+              className="h-10 w-[100%] border border-primary text-neutral-900 font-pregular rounded-3xl pl-8"
+              // style={styles.input}
+              // onChangeText={onChangeNumber}
+              // value={text}
+              placeholder="search"
+              // keyboardType=""
+            />
+            <View className="w-full flex-row justify-around items-center space-x-8">
+              <Pressable onPress={() => setActive("all")}>
+                <Text
+                  className={`text-primary ${
+                    active === "all" && "bg-white"
+                  } px-6 py-2 rounded-2xl`}
+                >
+                  ሁሉም
+                </Text>
+              </Pressable>
+              <Pressable onPress={() => setActive("pest")}>
+                <Text
+                  className={`text-primary ${
+                    active === "pest" && "bg-white"
+                  } px-6 py-2 rounded-2xl`}
+                >
+                  {" "}
+                  ፀረ-ተባይ
+                </Text>
+              </Pressable>
+              <Pressable onPress={() => setActive("seed")}>
+                <Text
+                  className={`text-primary ${
+                    active === "seed" && "bg-white"
+                  } px-6 py-2 rounded-2xl`}
+                >
+                  ምርጥዘሮች
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+        )}
+        ListFooterComponent={() => (
+          <FlatList
+            data={data.seeds}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item }) =>
+              active !== "pest" && <ShopCard item={item} />
+            }
+            extraData={(item) => item.id}
+            refreshControl={
+              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }
+          />
+        )}
       />
     </View>
   );
