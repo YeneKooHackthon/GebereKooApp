@@ -1,29 +1,15 @@
-import {
-  View,
-  Image,
-  ScrollView,
-  Text,
-  Pressable,
-  FlatList,
-  StyleSheet,
-} from "react-native";
-import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
-import { Link } from "expo-router";
+import { View, Image, Text, Pressable, FlatList } from "react-native";
 
 import { FontAwesome6 } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
-
 import PingAni from "./ping";
-import { AppColors } from "./constColors";
+
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import images from "../constants/images";
 import ItemCard from "./ItemCard";
 
 export default function Result({ imgurl, onClose, onChat, webdomain, data }) {
-  //   const plant_health = data?.status == "red" ? "unhealthy" : "healthy";
-  //   console.log("data: ", data);
-
   return (
     <SafeAreaView className="bg-slate-100 w-[100%] h-[100vh] px-4">
       {imgurl ? (
@@ -34,8 +20,6 @@ export default function Result({ imgurl, onClose, onChat, webdomain, data }) {
                 {"<"}Back
               </Text>
             </Pressable>
-            <Text className="text-[#44807a] font-bold text-xl">Results</Text>
-            {/* <Text className="text-[#44807a] font-bold text-xl"></Text> */}
           </View>
 
           <FlatList
@@ -44,6 +28,9 @@ export default function Result({ imgurl, onClose, onChat, webdomain, data }) {
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={() => (
               <View className="w-full flex items-center space-y-6 py-4">
+                <Text className="text-[#44807a] font-bold text-2xl ml-2 text-left w-full">
+                  Results
+                </Text>
                 <View className="IMAGE w-full flex items-center">
                   <View className="overflow-hidden w-full h-[250px] rounded-2xl">
                     <Image
@@ -76,33 +63,24 @@ export default function Result({ imgurl, onClose, onChat, webdomain, data }) {
                     </Text>
                   </View>
                 </View>
-                {/* <View className="STATUS-1 w-full flex-row justify-between items-center p-4 bg-white rounded-2xl">
-                  <Text className="text-base">Status</Text>
-                  <Text
-                    className={`text-base text-white py-2 px-4 rounded-xl ${
-                      data?.status === "red" ? "bg-red-500" : "bg-green-600"
-                    }`}
-                  >
-                    {data?.status === "red" ? "Unhealthy" : "Healthy"}
-                  </Text>
-                </View> */}
+
                 <View
                   className={`STATUS-1 w-full ${
                     data?.status === "red" ? "bg-red-100" : "bg-[#44807a40]"
                   } flex-row justify-between items-center p-4  rounded-2xl`}
                 >
-                  <Text className="text-base">Disease</Text>
+                  <Text className="text-base ml-4">Disease</Text>
                   <Text
-                    className={`text-base text-white py-2 px-4 rounded-xl ${
+                    className={`text-base text-white py-2 px-4 rounded-xl font-bold uppercase ${
                       data?.status === "red" ? "bg-red-500" : "bg-[#44807a]"
                     }`}
                   >
-                    {data?.status === "red" ? data?.disease : "no disease"}
+                    {data?.status === "red" ? data?.disease : "HEALTHY"}
                   </Text>
                 </View>
                 <View className="GALLERY w-full p-4 flex space-y-4  rounded-2xl">
                   <Text className="text-2xl text-[#44807a] font-bold">
-                    Photo gallery
+                    Photo Gallery
                   </Text>
                   <FlatList
                     data={data?.images.slice(1)}
