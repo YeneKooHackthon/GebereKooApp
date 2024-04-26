@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image } from "react-native";
+import { View, Text, Pressable, Image, ActivityIndicator } from "react-native";
 import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -12,6 +12,7 @@ import { getAuthResult } from "../api/api";
 export default function Login() {
   const [phone, setPhone] = React.useState(null);
   const [psw, setPsw] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
 
   const storeData = async (key, value) => {
     try {
@@ -24,11 +25,13 @@ export default function Login() {
   };
 
   const res = async () => {
+    setLoading(true);
     const a = getAuthResult(phone, psw)
       .then(async (res) => {
         console.log(res?.data?.record);
 
         await storeData("username", res?.data?.record?.fullname);
+        setLoading(false);
         router.replace("/home");
       })
       .catch((err) => {
@@ -69,7 +72,11 @@ export default function Login() {
           onPress={() => res()}
           className="bg-[#44807a] w-full flex-row justify-center items-center rounded-full h-[45px] overflow-hidden"
         >
-          <Text className="text-white">Login</Text>
+          {loading ? (
+            <ActivityIndicator color="white" size="small" />
+          ) : (
+            <Text className="text-white">Login</Text>
+          )}
         </Pressable>
         <Pressable onPress={() => router.replace("/signup")} className="">
           <Text className="text-black ">
