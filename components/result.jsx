@@ -9,7 +9,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import images from "../constants/images";
 import ItemCard from "./ItemCard";
 
-export default function Result({ imgurl, onClose, onChat, webdomain, data }) {
+export default function Result({ imgurl, onClose, data }) {
   return (
     <SafeAreaView className="bg-slate-100 w-[100%] h-[100vh] px-4">
       {imgurl ? (
@@ -33,11 +33,13 @@ export default function Result({ imgurl, onClose, onChat, webdomain, data }) {
                 </Text>
                 <View className="IMAGE w-full flex items-center">
                   <View className="overflow-hidden w-full h-[250px] rounded-2xl">
-                    <Image
-                      source={{ uri: data?.images[0] }}
-                      className="w-full h-full"
-                      //   resizeMode="contain"
-                    />
+                    {data?.images && (
+                      <Image
+                        source={{ uri: data?.images[0] }}
+                        className="w-full h-full"
+                        //   resizeMode="contain"
+                      />
+                    )}
                   </View>
                   <View className="w-[120px] h-[120px] border-4 mt-[-60px]  border-slate-100 rounded-full overflow-hidden">
                     <Image
@@ -86,7 +88,7 @@ export default function Result({ imgurl, onClose, onChat, webdomain, data }) {
                     data={data?.images.slice(1)}
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    renderItem={({ item, index }) => (
+                    renderItem={({ item }) => (
                       <View className="w-[150px] h-[150px] mr-2 bg-white overflow-hidden rounded-2xl flex space-y-4 items-center">
                         <Image
                           source={{ uri: item }}

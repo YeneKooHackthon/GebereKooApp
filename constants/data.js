@@ -2,43 +2,44 @@ import images from "./images";
 const communityFourmData = [
   {
     id: "1",
-    title: "ተባዮችዎን ይረዱ",
-    author: "ዳግም ለገሰ",
+    title: "Understand Your Pests",
+    author: "Dagim debebe",
     img: images.pests,
     content:
-      "ማንኛውንም ፀረ-ተባይ ከመጠቀምዎ በፊት በሰብልዎ ላይ ጉዳት የሚያደርሱ ተባዮችን ይለዩ። ሁሉም ተባዮች ጎጂ አይደሉም, እና አንዳንዶቹም ጠቃሚ ሊሆኑ ይችላሉ.",
+      "Before using any pesticides, identify the pests that are harming your crops. Not all pests are harmful, and some can be beneficial.",
   },
   {
     id: "4",
-    title: "እራስህን ጠብቅ",
-    author: "ሰላም ፍቃደ",
+    title: "Take care of yourself",
+    author: "Abdisa lemesa",
     img: images.keepSafe,
-    content: "ፀረ ተባይ መድሃኒቶችን ስትይዝ እና ስትተገብር ሁል ጊዜ ተገቢውን መከላከያ ልብስ እና መሳሪያ ይልበስ",
+    content:
+      "Always wear appropriate protective clothing and equipment when handling and applying pesticides.",
   },
   {
     id: "2",
-    title: "መመሪያዎችን ይከተሉ",
-    author: "ገመዳ መለሰ",
+    title: "Follow the instructions",
+    author: "Selam fikru",
     img: images.instruction,
     content:
-      "ሁልጊዜ ያንብቡ እና በፀረ-ተባይ ምልክት ላይ ያሉትን መመሪያዎች ይከተሉ። ከመጠን በላይ መጠቀም ወይም የተሳሳተ አጠቃቀም ውጤታማ ያልሆነ የተባይ መቆጣጠሪያ እና በአካባቢው ላይ ሊደርስ የሚችል ጉዳት ሊያስከትል ይችላል",
+      "Always read and follow the directions on the pesticide label. Overuse or misuse can result in ineffective pest control and potential damage to the environment.",
   },
   {
     id: "3",
-    title: "ጊዜ ቁልፍ ነው",
-    author: "ዳግም ለገሰ",
+    title: "Time is key",
+    author: "Abdisa lemesa",
     img: images.seasons,
     content:
-      "ለበለጠ ውጤታማነት ፀረ ተባይ መድኃኒቶችን በትክክለኛው ጊዜ ይተግብሩ፣ ለምሳሌ በተባዮች የሕይወት ዑደት ውስጥ በተወሰነ ደረጃ ወይም በተወሰነ ቀን",
+      "Apply pesticides at the right time for maximum effectiveness, such as at a specific stage or date in the pest's life cycle,",
   },
 
   {
     id: "5",
-    title: "አማራጮችን አስቡ",
-    author: "ገመዳ መለሰ",
+    title: "Consider the Options",
+    author: "Selam fikru",
     img: images.pesticideMan,
     content:
-      "ተባዮችን ለመቆጣጠር ባዮሎጂካል፣ባህላዊ እና ኬሚካላዊ ዘዴዎችን በማጣመር የተቀናጁ የተባይ መቆጣጠሪያ ስልቶችን ተመልከት",
+      "See Integrated Pest Management Strategies Combining Biological, Cultural and Chemical Methods to Control Pests",
   },
 ];
 

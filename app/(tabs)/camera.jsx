@@ -4,38 +4,38 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import icons from "../../constants/icons";
 import CameraBox from "../../components/CameraBox";
-import Gallery from "../../components/Gallery";
+// import Gallery from "../../components/Gallery";
 
 import { Camera, CameraType } from "expo-camera";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Alert,
   Image,
   Text,
   Pressable,
   View,
-  useWindowDimensions,
+  // useWindowDimensions,
   StyleSheet,
 } from "react-native";
-import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
+// import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 
-import NetInfo from "@react-native-community/netinfo";
+// import NetInfo from "@react-native-community/netinfo";
 import { StatusBar } from "expo-status-bar";
 import * as DocumentPicker from "expo-document-picker";
-import { Link } from "expo-router";
+// import { Link } from "expo-router";
 import { useIsFocused } from "@react-navigation/native";
 
 import Result from "../../components/result";
 import { getResult } from "../../api/api";
 import { AppColors } from "../../components/constColors";
 import axios from "axios";
-import images from "../../constants/images";
+// import images from "../../constants/images";
 
 const Detect = () => {
   const fetchImages = async (plantname) => {
     try {
       const images = await axios.get(
-        `http://hono_test.yenekoo.workers.dev/geberekoo/img?plant=${plantname}`
+        `https://hono_test.yenekoo.workers.dev/geberekoo/img?plant=${plantname}`
       );
       return images.data;
     } catch (err) {
@@ -63,7 +63,7 @@ const Detect = () => {
 
   const horizonal_lists1 =
     "botanist, Gardener, Ecologist, Horticulturist, Adventurer";
-  const horizonal_lists2 = "coffee, wheat, corn, bean, teff";
+  // const horizonal_lists2 = "coffee, wheat, corn, bean, teff";
 
   const [maxd, setMaxD] = useState("3");
   const [st, setST] = useState(".95");
@@ -75,13 +75,7 @@ const Detect = () => {
     "https://api-geberekoo.onrender.com/docs#/default/upload_image_upload_image_post"
   );
 
-  const windowHeight = useWindowDimensions().height;
-
-  // function toggleCameraType() {
-  //   setType((current) =>
-  //     current === CameraType.back ? CameraType.front : CameraType.back
-  //   );
-  // }
+  // const windowHeight = useWindowDimensions().height;
 
   function toggleTorch() {
     setFlash(!flash);
@@ -120,11 +114,6 @@ const Detect = () => {
     }
   };
 
-  // const ReSendImg = async () => {
-  //   setImgUrl(null);
-  //   SendImg(localimgurl);
-  // };
-
   async function takePhoto() {
     if (camera) {
       setImgUrl(null);
@@ -151,54 +140,6 @@ const Detect = () => {
       })
       .catch((err) => console.log(err));
   };
-
-  // function itemClick(index) {
-  //   setActive(index);
-  //   // console.log(index);
-  // }
-
-  useEffect(() => {
-    const removeNetInfoSubscription = NetInfo.addEventListener((state) => {
-      const offline = !(state.isConnected && state.isInternetReachable);
-      console.log(offline);
-      // setOffline(offline);`
-    });
-
-    return () => removeNetInfoSubscription();
-  }, []);
-
-  // const iconName = ["seed", "grain", "corn", "grain", "leaf"];
-
-  // const storeData = async (key, value) => {};
-
-  const getData = async (key) => {};
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const maxdData = await getData("maxd");
-      const webdomainData = await getData("webdomain");
-      const stData = await getData("st");
-      const domainData = await getData("domain");
-      const planttypeData = await getData("planttype");
-      console.log(maxd, webdomain, stData, domainData, planttype);
-
-      maxdData && setMaxD(maxdData);
-      webdomainData && setWebDomain(webdomainData);
-      stData && setST(stData);
-      domainData && setDomain(domainData);
-      planttypeData && setplantType(planttypeData);
-    };
-
-    fetchData();
-  }, []);
-
-  // const savetoLocalStorage = async () => {
-  //   await storeData("maxd", maxd);
-  //   await storeData("webdomain", webdomain);
-  //   await storeData("st", st);
-  //   await storeData("domain", domain);
-  //   await storeData("planttype", planttype);
-  // };
 
   if (!permission) {
     // Camera permissions are still loading

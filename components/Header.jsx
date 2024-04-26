@@ -8,7 +8,7 @@ const Header = ({ link, title }) => {
     <View className="flex-row justify-between items-center px-1 my-2">
       <Text className="font-pregular text-base  text-black">{title}</Text>
       <Link href={link} className="font-pregular text-sm  text-[#77B0AA] p-1">
-        <Text>ተጨማሪ አሳይ</Text>
+        <Text>Show more</Text>
       </Link>
     </View>
   );
