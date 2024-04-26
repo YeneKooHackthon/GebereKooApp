@@ -32,7 +32,9 @@ const Shop = () => {
       <FlatList
         data={data.pesticides}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => active !== "seed" && <ShopCard item={item} />}
+        renderItem={({ item }) =>
+          active !== "seed" && <ShopCard item={item} uses={item.uses} />
+        }
         extraData={(item) => item.id}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />

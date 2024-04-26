@@ -11,7 +11,7 @@ const ItemCard = ({ item, style }) => {
         <View className="flex items-center bg-gray-50">
           <Image
             source={item.img}
-            resizeMode="cover"
+            resizeMode="contain"
             className="w-[220px] h-[160px]"
           />
         </View>

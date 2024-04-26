@@ -1,4 +1,11 @@
-import { View, Image, Text, Pressable, FlatList } from "react-native";
+import {
+  View,
+  Image,
+  Text,
+  Pressable,
+  FlatList,
+  ScrollView,
+} from "react-native";
 
 import { FontAwesome6 } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
@@ -8,10 +15,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import images from "../constants/images";
 import ItemCard from "./ItemCard";
+import PlantNames from "./PlantNames";
 
 export default function Result({ imgurl, onClose, data }) {
   return (
-    <SafeAreaView className="bg-slate-100 w-[100%] h-[100vh] px-4">
+    <SafeAreaView className="bg-gray-100 w-[100%] h-[100vh] px-4">
       {imgurl ? (
         <>
           <View className="flex-row justify-between mb-4 items-center">
@@ -28,7 +36,7 @@ export default function Result({ imgurl, onClose, data }) {
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={() => (
               <View className="w-full flex items-center space-y-6 py-4">
-                <Text className="text-[#44807a] font-bold text-2xl ml-2 text-left w-full">
+                <Text className="text-[#44807a] font-bold text-2xl mt-[-10px] text-center w-full">
                   Results
                 </Text>
                 <View className="IMAGE w-full flex items-center">
@@ -37,7 +45,7 @@ export default function Result({ imgurl, onClose, data }) {
                       <Image
                         source={{ uri: data?.images[0] }}
                         className="w-full h-full"
-                        //   resizeMode="contain"
+                        // resizeMode="contain"
                       />
                     )}
                   </View>
@@ -53,17 +61,15 @@ export default function Result({ imgurl, onClose, data }) {
                   <Text className="text-2xl text-[#44807a] text-center font-bold">
                     {data?.plant_name}
                   </Text>
-                  <View className="w-full flex-row items-center justify-between">
-                    <Text className="text-sm bg-[#44807a40] py-3 px-6 rounded-2xl text-[#44807a] text-center font-bold">
-                      {data?.common_name}
-                    </Text>
-                    <Text className="text-sm bg-[#44807a40] py-3 px-6 rounded-2xl text-[#44807a] text-center font-bold">
-                      {data?.scientific_name}
-                    </Text>
-                    <Text className="text-sm bg-[#44807a40] py-3 px-6 rounded-2xl text-[#44807a] text-center font-bold">
-                      {data?.genus}
-                    </Text>
-                  </View>
+                  <ScrollView
+                    horizontal
+                    className="w-full flex-row mb-2"
+                    showsHorizontalScrollIndicator={false}
+                  >
+                    <PlantNames name={data?.common_name} />
+                    <PlantNames name={data?.scientific_name} />
+                    <PlantNames name={data?.genus} />
+                  </ScrollView>
                 </View>
 
                 <View
@@ -153,26 +159,32 @@ export default function Result({ imgurl, onClose, data }) {
                     )}
                   />
                 </View>
-                <View className="PESTCIDES w-full p-4 flex space-y-4  rounded-2xl">
-                  <Text className="text-2xl text-[#44807a] font-bold">
-                    Pestcides
-                  </Text>
-                  <FlatList
-                    data={
-                      data?.status === "red"
-                        ? data?.pesticides
-                        : ["chem1", "chem2", "chem3"]
-                    }
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    renderItem={({ item, index }) => (
-                      <ItemCard
-                        style="rounded-2xl"
-                        item={{ name: item, img: images.pestcide2, price: 150 }}
-                      />
-                    )}
-                  />
-                </View>
+                {data?.status === "red" && (
+                  <View className="PESTCIDES w-full p-4 flex space-y-4  rounded-2xl">
+                    <Text className="text-2xl text-[#44807a] font-bold">
+                      Pestcides
+                    </Text>
+                    <FlatList
+                      data={
+                        data?.status === "red"
+                          ? data?.pesticides
+                          : ["chem1", "chem2", "chem3"]
+                      }
+                      horizontal
+                      showsHorizontalScrollIndicator={false}
+                      renderItem={({ item, index }) => (
+                        <ItemCard
+                          style="rounded-2xl"
+                          item={{
+                            name: item,
+                            img: images.pestcide2,
+                            price: 150,
+                          }}
+                        />
+                      )}
+                    />
+                  </View>
+                )}
               </View>
             )}
           />

@@ -6,26 +6,31 @@ import Splash from "../components/Splash";
 import { router } from "expo-router";
 
 const index = () => {
-  // const [name, setName] = React.useState(1);
+  const [name, setName] = React.useState(1);
 
-  // const getData = async () => {
-  //   try {
-  //     const value = await AsyncStorage.getItem("username");
-  //     if (value !== null) {
-  //       router.replace("/home");
-  //     }
-  //   } catch (e) {
-  //     setName(3);
-  //   }
-  // };
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("username");
+      console.log(value);
+      if (value !== null) {
+        router.replace("/home");
+      } else {
+        setName(3);
+      }
+    } catch (e) {
+      setName(3);
+    }
+  };
 
-  // React.useEffect(() => {
-  //   setTimeout(() => {
-  //     getData();
-  //   }, 2500);
-  // }, []);
+  React.useEffect(() => {
+    setTimeout(() => {
+      getData();
+    }, 2500);
+  }, []);
 
-  return <Login />;
+  console.log(name);
+
+  return name === 1 ? <Splash /> : <Login />;
 };
 
 export default index;

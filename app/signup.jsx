@@ -2,7 +2,6 @@ import {
   View,
   Text,
   Pressable,
-  Image,
   ScrollView,
   ActivityIndicator,
 } from "react-native";
@@ -31,8 +30,9 @@ export default function SignUp() {
         setLoading(false);
       })
       .catch((err) => {
-        alert(err);
-        // console.log(err);
+        alert("something went wrong");
+        setLoading(false);
+        alert("Wrong password or number");
       });
   };
 

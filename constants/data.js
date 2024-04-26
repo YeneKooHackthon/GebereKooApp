@@ -43,89 +43,63 @@ const communityFourmData = [
   },
 ];
 
-const chemicals = [
-  {
-    id: "1",
-    name: "name1",
-    price: "25birr",
-  },
-  {
-    id: "2",
-    name: "name2",
-    price: "25birr",
-  },
-  {
-    id: "3",
-    name: "name3",
-    price: "25birr",
-  },
-  {
-    id: "4",
-    name: "name4",
-    price: "25birr",
-  },
-  {
-    id: "5",
-    name: "name5",
-    price: "25birr",
-  },
-  {
-    id: "6",
-    name: "name6",
-    price: "25birr",
-  },
-];
-
 const seeds = [
   {
     id: "1",
-    name: "በቆሎ",
+    name: "Corn",
     img: images.cornImg,
-    price: "150",
   },
   {
     id: "2",
-    name: "ስንዴ",
+    name: "Coffe",
     img: images.coffeeImg,
-    price: "220",
   },
   {
     id: "3",
-    name: "ቴፍ",
+    name: "Sorghum",
     img: images.tefImg,
-    price: "265",
   },
   {
     id: "4",
-    name: "ስንዴ",
+    name: "Wheat",
     img: images.wheatImg,
-    price: "220",
   },
 ];
 
 const pesticides = [
   {
     id: "1",
-    name: "pestcide1",
+    name: "Malathion",
     img: images.pestcide1,
+    uses: ["Corn", "Mango leaf rust", "Rust"],
     price: "150",
   },
   {
     id: "2",
-    name: "pestcide2",
+    name: "Dimethoate",
+    uses: ["Maize Virus", "Streak virus"],
     img: images.pestcide2,
     price: "220",
   },
   {
     id: "3",
-    name: "pestcide3",
+    name: "Carbaryl",
+    uses: ["Avocado leaf rust", "Mango leaf rust", "Rust"],
     img: images.pestcide3,
     price: "265",
   },
   {
     id: "4",
-    name: "pestcide5",
+    name: "Propiconazole",
+    uses: ["Coffee leaf rust", "Bean leaf rust", "Rust"],
     img: images.pestcide4,
+    price: "220",
+  },
+  {
+    id: "5",
+    name: "Tebuconazole",
+    uses: ["Mango leaf rust", "Rust"],
+    img: images.pestcide2,
     price: "220",
   },
 ];
@@ -166,7 +140,6 @@ const weather = [
 
 export default {
   communityFourmData,
-  chemicals,
   seeds,
   pesticides,
   weather,

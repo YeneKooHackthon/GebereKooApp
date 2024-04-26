@@ -1,15 +1,19 @@
-import { View, Text } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import React from "react";
 import ItemCard from "./ItemCard";
 
-const ShopCard = ({ item }) => {
+const ShopCard = ({ item, uses }) => {
   return (
     <View className="w-full bg-white flex-row my-3 rounded-2xl overflow-hidden">
       <ItemCard item={item} style="" />
       <View className="felx justify-around px-4 py-2 max-w-[50%] ">
-        <Text className="text-sm text-slate-800">
-          Prosaro® and Aviato® XPro® Prosaro® and Aviato® XPro®
-        </Text>
+        <FlatList
+          data={uses}
+          extraData={(item) => item.id}
+          renderItem={({ item }) => (
+            <Text className="text-base text-slate-800">{item}</Text>
+          )}
+        />
         <Text className="text-slate-800 text-sm underline ml-[30px]">
           0962634568
         </Text>

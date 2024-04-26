@@ -36,7 +36,8 @@ export default function Login() {
       })
       .catch((err) => {
         console.log(err);
-        alert(err);
+        setLoading(false);
+        alert("Wrong password or number");
       });
   };
 
