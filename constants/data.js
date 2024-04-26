@@ -130,9 +130,44 @@ const pesticides = [
   },
 ];
 
+const weather = [
+  {
+    date: "4/May/2024",
+    id: 1,
+    status: 19,
+    condition: "Rainy",
+  },
+  {
+    date: "5/May/2024",
+    id: 2,
+    status: 22,
+    condition: "suny",
+  },
+  {
+    date: "6/May/2024",
+    id: 3,
+    status: 20,
+    condition: "cloudy",
+  },
+  {
+    date: "7/May/2024",
+    id: 4,
+    status: 21,
+    condition: "Rainy",
+  },
+  {
+    date: "8/May/2024",
+    id: 5,
+    status: 18,
+    condition: "Rainy",
+  },
+  // ... add more objects as needed
+];
+
 export default {
   communityFourmData,
   chemicals,
   seeds,
   pesticides,
+  weather,
 };

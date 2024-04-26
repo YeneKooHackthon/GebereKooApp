@@ -85,7 +85,7 @@ export default function Result({ imgurl, onClose, data }) {
                     Photo Gallery
                   </Text>
                   <FlatList
-                    data={data?.images.slice(1)}
+                    data={data?.images?.slice(1)}
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) => (

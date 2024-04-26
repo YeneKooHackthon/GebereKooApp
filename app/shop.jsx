@@ -26,7 +26,7 @@ const Shop = () => {
   return (
     <View className="bg-gray h-full p-4 flex-col space-y-2">
       <Text className="font-pregular text-2xl text-primary text-center">
-        ሱቅ
+        Shop
       </Text>
 
       <FlatList

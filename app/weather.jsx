@@ -44,36 +44,36 @@ const Weather = () => {
       <Text className="font-pregular text-lg text-[#135D66]">Weather</Text>
 
       <FlatList
-        data={data.communityFourmData}
+        data={data.weather}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <View
             className={`bg-white ${
-              item.id === "1" ? "border-b-4  border-[#135D66]" : ""
+              item.id === 1 ? "border-b-4  border-[#135D66]" : ""
             } w-[100%] min-h-[86px] rounded-2xl p-4 mt-4 space-x-6`}
           >
             <View
               className={`${
-                item.id === "1"
-                  ? "flex-col"
-                  : "flex-row items-center justify-center"
+                item.id === 1 ? "flex-col" : ""
               } space-y-4 items-center`}
             >
               <View
                 className={`${
-                  item.id === "1"
-                    ? "min-w-full flex-row justify-between items-center"
-                    : "items-center"
+                  item.id === 1
+                    ? "min-w-full flex-row justify-between items-center "
+                    : "items-center space-y-4"
                 } `}
               >
                 <Text className="font-pregular text-lg text-[#135D66]">
-                  {item.title}
+                  {item.date}
                 </Text>
-                <Text className="font-pregular text-lg text-red-400">16°C</Text>
+                <Text className="font-pregular text-2xl text-red-400">
+                  {item.status}°c
+                </Text>
               </View>
               <View
                 className={`w-full rounded-2xl flex justify-center items-center  ${
-                  item.id === "1" ? "" : "max-w-[50%]"
+                  item.id === 1 ? "" : "max-w-[50%]"
                 }`}
               >
                 <Image
@@ -82,7 +82,7 @@ const Weather = () => {
                   resizeMode="contain"
                 />
                 <Text className="font-pregular text-lg text-[#135D66]">
-                  Rainy
+                  {item.condition}
                 </Text>
               </View>
             </View>

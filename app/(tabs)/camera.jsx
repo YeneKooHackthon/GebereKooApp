@@ -110,7 +110,7 @@ const Detect = () => {
             `https://api-geberekoo.onrender.com/plant/img?plant=${plantname}`
           )
           .then((res) => {
-            // setAIResult({ ...aires, res });
+            setAIResult({ ...aires, images: res?.data });
             console.log("lll res =====>>>>>> ?? ?????? ???", res);
           })
           .catch((err) => {
