@@ -1,8 +1,10 @@
 import { View, FlatList, RefreshControl } from "react-native";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 // import { Link } from "expo-router";
 
 // import icons from "../../constants/icons";
@@ -17,7 +19,27 @@ import ForumCard from "../../components/ForumCard";
 
 const Home = () => {
   const [refreshing, setRefreshing] = useState(false);
+  const [name, setName] = useState(null);
   HomeWeatherCard;
+
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("username");
+      if (value !== null) {
+        // value previously stored
+        console.log("zzz", value);
+        setName(value);
+      }
+    } catch (e) {
+      // error reading value
+      console.log("zzz", e);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   const onRefresh = () => {
     setRefreshing(true);
     setTimeout(() => {
@@ -39,7 +61,7 @@ const Home = () => {
         extraData={(item) => item.id}
         ListHeaderComponent={() => (
           <View className="flex-col space-y-6">
-            <HomeHeader name="Daniel" />
+            <HomeHeader name={name ?? "GebereKoo"} />
             <View className="flex-col space-y-3">
               <Header title="የአየር ሁኔታ ትንበያ" link="/weather" />
               <View className="bg-[#44807a] w-full min-h-[50px] mr-2 flex rounded-2xl p-3 space-y-4">

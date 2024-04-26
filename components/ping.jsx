@@ -18,9 +18,9 @@ export default function PingAni({ onPress }) {
   }, []);
 
   return (
-    <View style={styles.container} className="relative w-full">
+    <View style={styles.container} className="relative w-full pb-[3vh]">
       <View
-        className="absolute bottom-[17px] w-[60px] h-[60px] flex justify-center items-center rounded-full"
+        className="absolute bottom-[7vh] w-[50px] h-[50px] flex justify-center items-center rounded-full"
         style={{ backgroundColor: "#44807a" }}
       >
         <MaterialIcons

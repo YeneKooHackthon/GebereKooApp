@@ -24,7 +24,7 @@ const Forum = () => {
   };
   return (
     <View className="bg-gray h-full p-4 flex-col space-y-4">
-      <Text className="font-pregular text-lg text-primary">
+      <Text className="font-pregular text-lg text-[#44807a]">
         Community Forum
       </Text>
       <FlatList

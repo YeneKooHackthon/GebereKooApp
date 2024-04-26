@@ -48,7 +48,9 @@ const Weather = () => {
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <View
-            className={`bg-white w-[100%] min-h-[86px] rounded-2xl p-4 mt-4 space-x-6`}
+            className={`bg-white ${
+              item.id === "1" ? "border-b-4  border-[#135D66]" : ""
+            } w-[100%] min-h-[86px] rounded-2xl p-4 mt-4 space-x-6`}
           >
             <View
               className={`${

@@ -23,8 +23,8 @@ export default function App() {
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
-        tabBarActiveTintColor: "#33a800",
-        tabBarInactiveTintColor: "#77B0AA",
+        tabBarActiveTintColor: "rgb(0 117 55)",
+        tabBarInactiveTintColor: "#77B0AAdd",
 
         tabBarStyle: {
           borderTopWidth: 1,

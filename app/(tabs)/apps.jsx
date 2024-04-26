@@ -8,7 +8,7 @@ import { Link } from "expo-router";
 const Apps = () => {
   return (
     <SafeAreaView className="bg-gray h-full px-4">
-      <View className="mt-8 min-h-[70%] flex items-center justify-center space-y-16">
+      <View className="mt-[7vh] min-h-[70%] flex items-center justify-center space-y-16">
         <Text className="font-pregular text-lg text-primary text-center">
           ሚኒ-መተግበሪያዎች
         </Text>
@@ -27,7 +27,7 @@ const Apps = () => {
           contentContainerStyle={styles.listWrapper}
           className="mt-16 grow-0"
           renderItem={({ item }) => (
-            <View className="min-w-[160px] min-h-[130px] bg-white p-4 felx-row justify-center items-center rounded-2xl">
+            <View className="min-w-[42vw] min-h-[130px] bg-white p-4 felx-row justify-center items-center rounded-2xl">
               <Link href={item.link}>
                 <View className="flex-col items-center justify-center space-y-2">
                   <View>
@@ -62,7 +62,7 @@ const Apps = () => {
           contentContainerStyle={styles.listWrapper}
           className="mt-16 grow-0"
           renderItem={({ item }) => (
-            <View className="min-w-[160px] min-h-[120px] bg-white p-4 felx-row justify-center items-center rounded-2xl">
+            <View className="min-w-[42vw] min-h-[120px] bg-white p-4 felx-row justify-center items-center rounded-2xl">
               <Link href={item.link}>
                 <View className="flex-col items-center justify-center space-y-2">
                   <View>

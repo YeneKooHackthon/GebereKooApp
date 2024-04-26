@@ -220,7 +220,7 @@ const Detect = () => {
         </Text>
         <Pressable
           onPress={requestPermission}
-          className="flex justify-center items-center h-[7vh] w-1/2 rounded-[10px] border-2 border-[#2B2A26]"
+          className="flex justify-center items-center h-[7vh] w-1/2 rounded-[10px] border-2 border-[#44807a]"
           style={{ backgroundColor: AppColors.secondary }}
         >
           <Text style={{ color: AppColors.main }}>Grant Permission </Text>

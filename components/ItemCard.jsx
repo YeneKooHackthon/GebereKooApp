@@ -16,12 +16,12 @@ const ItemCard = ({ item, style }) => {
           />
         </View>
         <View className="px-3 py-4">
-          <Text className="font-pregular text-lg text-primary">
+          <Text className="font-pregular text-lg text-[#44807a]">
             {item.name}
           </Text>
           <View className="flex-row w-full justify-between items-center">
             <Text className="font-pregular text-sm text-slate-600">ዋጋ</Text>
-            <Text className="font-pregular text-xs text-primary">
+            <Text className="font-pregular text-xs text-[#44807a]">
               {item.price}ብር
             </Text>
           </View>

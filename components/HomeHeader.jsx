@@ -8,7 +8,7 @@ const HomeHeader = ({ name }) => {
   return (
     <View className="flex-row  justify-between items-start">
       <View className="gap-2">
-        <Text className="text-lg text-[#659a9e] font-pregular ">
+        <Text className="text-lg text-[#44807a] font-pregular capitalize">
           ሰላም {name}
         </Text>
         <Text className="text-xl text-neutral-900 font-pregular">
