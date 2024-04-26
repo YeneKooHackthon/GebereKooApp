@@ -3,13 +3,11 @@ import {
   Text,
   TextInput,
   FlatList,
-  Image,
   RefreshControl,
   Pressable,
 } from "react-native";
 import React from "react";
 import data from "../constants/data";
-import icons from "../constants/icons";
 
 import { useState } from "react";
 import ShopCard from "../components/shopCard";
@@ -43,11 +41,7 @@ const Shop = () => {
           <View className="flex space-y-8 mt-2">
             <TextInput
               className="h-10 w-[100%] border border-primary text-neutral-900 font-pregular rounded-3xl pl-8"
-              // style={styles.input}
-              // onChangeText={onChangeNumber}
-              // value={text}
               placeholder="search"
-              // keyboardType=""
             />
             <View className="w-full flex-row justify-around items-center space-x-8">
               <Pressable onPress={() => setActive("all")}>
@@ -56,7 +50,7 @@ const Shop = () => {
                     active === "all" && "bg-white"
                   } px-6 py-2 rounded-2xl`}
                 >
-                  ሁሉም
+                  All
                 </Text>
               </Pressable>
               <Pressable onPress={() => setActive("pest")}>
@@ -66,7 +60,7 @@ const Shop = () => {
                   } px-6 py-2 rounded-2xl`}
                 >
                   {" "}
-                  ፀረ-ተባይ
+                  Pesticides
                 </Text>
               </Pressable>
               <Pressable onPress={() => setActive("seed")}>
@@ -75,7 +69,7 @@ const Shop = () => {
                     active === "seed" && "bg-white"
                   } px-6 py-2 rounded-2xl`}
                 >
-                  ምርጥዘሮች
+                  Seeds
                 </Text>
               </Pressable>
             </View>

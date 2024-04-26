@@ -20,9 +20,9 @@ const ItemCard = ({ item, style }) => {
             {item.name}
           </Text>
           <View className="flex-row w-full justify-between items-center">
-            <Text className="font-pregular text-sm text-slate-600">ዋጋ</Text>
+            <Text className="font-pregular text-sm text-slate-600">Price</Text>
             <Text className="font-pregular text-xs text-[#44807a]">
-              {item.price}ብር
+              call 0966356610
             </Text>
           </View>
         </View>

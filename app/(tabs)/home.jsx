@@ -20,7 +20,7 @@ import ForumCard from "../../components/ForumCard";
 const Home = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [name, setName] = useState(null);
-  HomeWeatherCard;
+  // HomeWeatherCard;
 
   const getData = async () => {
     try {
@@ -63,13 +63,13 @@ const Home = () => {
           <View className="flex-col space-y-6">
             <HomeHeader name={name ?? "GebereKoo"} />
             <View className="flex-col space-y-3">
-              <Header title="የአየር ሁኔታ ትንበያ" link="/weather" />
+              <Header title="Weaher condition" link="/weather" />
               <View className="bg-[#44807a] w-full min-h-[50px] mr-2 flex rounded-2xl p-3 space-y-4">
                 <HomeWeatherCard />
               </View>
             </View>
             <View className="flex-col space-y-1">
-              <Header title="ምርጥዘሮች" link="/shop" />
+              <Header title="Seeds" link="/shop" />
               <FlatList
                 data={data.seeds}
                 showsHorizontalScrollIndicator={false}
@@ -82,7 +82,7 @@ const Home = () => {
               />
             </View>
             <View className="flex-col space-y-1">
-              <Header title="ፀረ-ተባይ" link="/shop" />
+              <Header title="Pesticides" link="/shop" />
               <FlatList
                 data={data.pesticides}
                 showsHorizontalScrollIndicator={false}
@@ -94,7 +94,7 @@ const Home = () => {
                 extraData={(item) => item.id}
               />
             </View>
-            <Header title=" የማህበረሰብ መድረኮች" link="/forum" />
+            <Header title="community forum" link="/forum" />
           </View>
         )}
         refreshControl={

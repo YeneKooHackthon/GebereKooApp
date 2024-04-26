@@ -35,8 +35,7 @@ const Education = () => {
                 {item.title}
               </Text>
               <Text className="font-pregular text-sm text-slate-700">
-                ማንኛውንም ፀረ-ተባይ ከመጠቀምዎ በፊት በሰብልዎ ላይ ጉዳት የሚያደርሱ ተባዮችን ይለዩ። ሁሉም ተባዮች
-                ጎጂ አይደሉም, እና አንዳንዶቹም ጠቃሚ ሊሆኑ ይችላሉ
+                {item.content}
               </Text>
               <View className="min-h-[150px] bg-slate-100 w-full rounded-2xl flex justify-center items-center">
                 <Image

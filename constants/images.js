@@ -14,6 +14,8 @@ import pestcide2 from "../assets/images/pestcide2.jpeg";
 import pestcide3 from "../assets/images/pestcide3.jpeg";
 import pestcide4 from "../assets/images/pestcide4.jpeg";
 
+import leafLoad from "../assets/images/leaf-load.gif";
+
 export default {
   cornImg,
   wheatImg,
@@ -28,4 +30,5 @@ export default {
   pestcide2,
   pestcide3,
   pestcide4,
+  leafLoad,
 };

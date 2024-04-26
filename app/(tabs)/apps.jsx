@@ -10,15 +10,15 @@ const Apps = () => {
     <SafeAreaView className="bg-gray h-full px-4">
       <View className="mt-[7vh] min-h-[70%] flex items-center justify-center space-y-16">
         <Text className="font-pregular text-lg text-primary text-center">
-          ሚኒ-መተግበሪያዎች
+          Mini-apps
         </Text>
 
         <FlatList
           data={[
-            { id: "1", name: "ሱቅ", link: "/shop", icon: icons.shop },
+            { id: "1", name: "Shop", link: "/shop", icon: icons.shop },
             {
               id: "2",
-              name: "የማህበረሰብ መድረኮች",
+              name: "community forum",
               link: "/forum",
               icon: icons.forum,
             },
@@ -47,13 +47,13 @@ const Apps = () => {
           data={[
             {
               id: "3",
-              name: "የአየር ሁኔታ",
+              name: "weather condition",
               link: "/weather",
               icon: icons.weather,
             },
             {
               id: "4",
-              name: "ትምህርት",
+              name: "Education",
               link: "/education",
               icon: icons.videos,
             },
