@@ -35,7 +35,7 @@ const Detect = () => {
   const fetchImages = async (plantname) => {
     try {
       const images = await axios.get(
-        `http://hono_test.yenekoo.workers.dev/geberekoo/img?plant=${plantname}`
+        `https://hono_test.yenekoo.workers.dev/geberekoo/img?plant=${plantname}`
       );
       return images.data;
     } catch (err) {
@@ -111,9 +111,17 @@ const Detect = () => {
       const plantname = aires?.common_name ? aires?.common_name : "plant";
 
       if (plantname) {
-        const images = await fetchImages(plantname);
-        console.log("lll res =====>>>>>>", aires);
-        setAIResult({ ...aires, images });
+        axios
+          .get(
+            `https://api-geberekoo.onrender.com/plant/img?plant=${plantname}`
+          )
+          .then((res) => {
+            // setAIResult({ ...aires, res });
+            console.log("lll res =====>>>>>> ?? ?????? ???", res);
+          })
+          .catch((err) => {
+            console.log("err", err);
+          });
       }
     } else {
       Alert.alert("sth went wronge try again");
