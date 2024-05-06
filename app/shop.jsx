@@ -25,15 +25,15 @@ const Shop = () => {
   };
   return (
     <View className="bg-gray h-full p-4 flex-col space-y-2">
-      <Text className="font-pregular text-2xl text-primary text-center">
-        Shop
-      </Text>
+      <Text className="font-pregular text-2xl text-primary">Shop</Text>
 
       <FlatList
         data={data.pesticides}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) =>
-          active !== "seed" && <ShopCard item={item} uses={item.uses} />
+          active !== "seed" && (
+            <ShopCard item={item} uses={item.uses} desc={item.desc} />
+          )
         }
         extraData={(item) => item.id}
         refreshControl={
@@ -55,6 +55,15 @@ const Shop = () => {
                   All
                 </Text>
               </Pressable>
+              <Pressable onPress={() => setActive("seed")}>
+                <Text
+                  className={`text-primary ${
+                    active === "seed" && "bg-white"
+                  } px-6 py-2 rounded-2xl`}
+                >
+                  Seeds
+                </Text>
+              </Pressable>
               <Pressable onPress={() => setActive("pest")}>
                 <Text
                   className={`text-primary ${
@@ -65,30 +74,25 @@ const Shop = () => {
                   Pesticides
                 </Text>
               </Pressable>
-              <Pressable onPress={() => setActive("seed")}>
-                <Text
-                  className={`text-primary ${
-                    active === "seed" && "bg-white"
-                  } px-6 py-2 rounded-2xl`}
-                >
-                  Seeds
-                </Text>
-              </Pressable>
             </View>
           </View>
         )}
         ListFooterComponent={() => (
-          <FlatList
-            data={data.seeds}
-            showsVerticalScrollIndicator={false}
-            renderItem={({ item }) =>
-              active !== "pest" && <ShopCard item={item} />
-            }
-            extraData={(item) => item.id}
-            refreshControl={
-              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-            }
-          />
+          <>
+            <FlatList
+              data={data.seeds}
+              showsVerticalScrollIndicator={false}
+              renderItem={({ item }) =>
+                active !== "pest" && (
+                  <ShopCard item={item} uses={item.uses} desc={item.desc} />
+                )
+              }
+              extraData={(item) => item.id}
+              refreshControl={
+                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+              }
+            />
+          </>
         )}
       />
     </View>

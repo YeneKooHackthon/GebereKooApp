@@ -6,8 +6,8 @@ import coffeeImg from "../assets/images/coffe-seed.jpg";
 import pesticideMan from "../assets/images/pesticide-man-img.jpg";
 import instruction from "../assets/images/instruction-img.jpeg";
 import keepSafe from "../assets/images/keep-safe-img.jpeg";
-import seasons from "../assets/images/seasons-img.jpeg";
-import pests from "../assets/images/pests-img.jpeg";
+import seasons from "../assets/images/time.jpeg";
+import pests from "../assets/images/pets.jpg";
 
 import pestcide1 from "../assets/images/malathion.webp";
 import pestcide2 from "../assets/images/dimethoate.jpeg";

@@ -1,4 +1,5 @@
 import { View, FlatList, RefreshControl } from "react-native";
+import { Link } from "expo-router";
 
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -62,12 +63,14 @@ const Home = () => {
         ListHeaderComponent={() => (
           <View className="flex-col space-y-6">
             <HomeHeader name={name ?? "GebereKoo"} />
+
             <View className="flex-col space-y-3">
-              <Header title="Weaher condition" link="/weather" />
-              <View className="bg-[#44807a] w-full min-h-[50px] mr-2 flex rounded-2xl p-3 space-y-4">
+              {/* <Header title="Weaher condition" link="/weather" /> */}
+              <View className="bg-[#44807a] w-full min-h-[50px] mr-2 flex-row justify-center rounded-2xl p-3 space-y-4">
                 <HomeWeatherCard />
               </View>
             </View>
+
             <View className="flex-col space-y-1">
               <Header title="Seeds" link="/shop" />
               <FlatList
