@@ -28,3 +28,8 @@ Building GebereKoo has been a journey of continuous learning and growth for our 
 
 Looking ahead, we envision expanding GebereKoo's capabilities to encompass a broader range of plant diseases and crop types. By continuously refining our AI algorithms and incorporating feedback from users and domain experts, we aim to enhance the app's accuracy and effectiveness in disease detection and management. Additionally, we plan to explore opportunities for collaboration with agricultural organizations and institutions to further validate and deploy GebereKoo in real-world settings, ultimately maximizing its impact on global food security and agricultural sustainability.
 
+## Demo and Resources
+- **Landing Page**: [GebereKoo Landing Page](https://geberekoo.pages.dev/)
+- **Demo Video**: [GebereKoo Demo Video](https://vimeo.com/941664744?share=copy)
+- **Mobile App**: [Download Mobile App](https://mega.nz/file/NRhU0CAa#8jPOboPt8E_-u5T0jqMabKAKEHf_q72npXSmbz2GGqY)
+- **Backend Repository**: [GebereKoo Backend GitHub Repository](https://github.com/YeneKooHackthon/backend)
